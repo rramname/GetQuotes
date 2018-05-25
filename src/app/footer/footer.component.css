@@ -1,0 +1,9 @@
+.footer{
+    min-height:5%;
+    border-top: groove;
+    bottom: 0;
+    position: fixed;
+    min-width: -webkit-fill-available;
+    background-color: lightgrey;
+    padding-right: 2%;
+}

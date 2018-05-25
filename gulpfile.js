@@ -5,7 +5,7 @@ var run=require("gulp-run")
 var nodemon=require("gulp-nodemon")
 gulp.task("compile",function(){
     gulp.src('MiddleTier/**/*.ts')
-        .pipe(ts("MiddleTier/server-tsconfig.json"))
+        .pipe(ts())
         .pipe(gulp.dest('./server/'));
 
 })
