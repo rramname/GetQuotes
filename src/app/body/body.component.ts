@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { QuoteService } from '../../Services/quote.service';
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Observer';
 
 @Component({
   selector: 'app-body',
@@ -8,7 +11,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class BodyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private server:QuoteService) { }
 
   ngOnInit() {
     this.items=[
@@ -33,7 +36,12 @@ export class BodyComponent implements OnInit {
                 label: 'Logout'
             }
     ]
+
+
+    this.server.home().then((data)=>{console.log(data); this.connectionStatus=data})
+  
   }  
   
   items:MenuItem[];
+  connectionStatus:any;
 }

@@ -4,7 +4,7 @@ var express = require("express");
 var Router = /** @class */ (function () {
     function Router() {
         this.routes = express.Router();
-        this.routes.get('/default', function (req, resp) {
+        this.routes.get('/', function (req, resp) {
             return "default working";
         });
     }

@@ -5,7 +5,9 @@ var run=require("gulp-run")
 var nodemon=require("gulp-nodemon")
 gulp.task("compile",function(){
     gulp.src('MiddleTier/**/*.ts')
-        .pipe(ts())
+        .pipe(ts({
+            "lib":["ES2015"]
+        }))
         .pipe(gulp.dest('./server/'));
 
 })
