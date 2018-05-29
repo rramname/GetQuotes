@@ -10,25 +10,36 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import {InputTextModule} from 'primeng/inputtext';
 import {SlideMenuModule} from 'primeng/slidemenu';
+import {CardModule} from 'primeng/card';
 import { QuoteService } from '../Services/quote.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LandingComponent } from './landing/landing.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from '../routing';
+import { AuthorsComponent } from './authors/authors.component';
+import { TagsComponent } from './tags/tags.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    LandingComponent,
+    AuthorsComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    RouterModule.forRoot(appRoutes),
     ButtonModule,
     ToolbarModule,
     InputTextModule,
-    SlideMenuModule
+    SlideMenuModule,
+    CardModule
   ],
   providers: [QuoteService],
   bootstrap: [AppComponent]

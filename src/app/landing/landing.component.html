@@ -1,0 +1,26 @@
+<!-- <div class="qofday" *ngIf="quote">
+  <p-card title="Quote of the day" subtitle="Subtitle" style="width: 90%;text-align: center;height: 300pt;" styleClass="ui-card-shadow">
+    <p-header></p-header>
+    <div style="font-size: xx-large">Characters do not change. Opinions alter, but characters are only developed.Characters do not change. Opinions alter, but characters are only developed.Characters do not change. Opinions alter, but characters are only developed.Characters do not change. Opinions alter, but characters are only developed.Characters do not change. Opinions alter, but characters are only developed.Characters do not change. Opinions alter, but characters are only developed.</div>
+    <p>{{quote.author}}</p>
+    <p-footer>
+        <button pButton type="button" label="Save" icon="fa-check"></button>
+        <button pButton type="button" label="Cancel" icon="fa-close" class="ui-button-secondary"></button>
+    </p-footer>
+</p-card>
+</div> -->
+
+<div  class="qofday ui-widget" *ngIf="quote">
+<div style="clear: both;">
+ 
+  <div>{{quote.body}}
+    <p>--{{quote.author}}--</p>
+    <button pButton type="button" label="Upvote" ><span>{{quote.upvotes_count}}</span></button>
+    <button pButton type="button" label="Downvote" ><span>{{quote.downvotes_count}}</span></button>
+  </div>
+  
+</div>
+
+</div>
+<div class="tags ui-widget" *ngFor="let tag of quote.tags">
+    <span>{{tag}}</span></div>

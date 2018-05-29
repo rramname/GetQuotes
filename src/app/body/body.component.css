@@ -5,12 +5,15 @@
 }
 .bodyContainer{
     width: 85%;
-    border:solid;
+    border-bottom:solid;
+    border-bottom-color: cadetblue;
     margin-left:5px;
     margin-top:5px;
     float: left;
+    min-height: 100%;
 }
 .sidemenu{
     width: 10%!important;
     float: left;
+    display: table
 }

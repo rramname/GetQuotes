@@ -18,4 +18,16 @@ export class QuoteService
        
     
     }
+
+    GetTypeHeads(){
+            if(this.typesHeades==null){
+                return this.http.get("http://localhost:3000/authors").toPromise().then((resp)=>{
+                    return resp;
+                });
+            }
+
+    }
+
+
+    typesHeades:any;
 }

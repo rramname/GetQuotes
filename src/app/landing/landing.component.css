@@ -1,0 +1,19 @@
+.qofday{
+    display: flex;
+    height: -webkit-fill-available;
+    align-items: center;
+  justify-content: center;
+  width: 90%;
+  text-align: center;
+  height:300pt;
+  font-size: xx-large;
+}   
+
+.tags{
+    width:auto;
+    height: auto;
+    float: left;
+    padding: 1%;
+    margin: 1%;
+    border-bottom: solid 1px #2790b0;
+}

@@ -37,42 +37,45 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var express = require("express");
 var fetch = require("node-fetch");
-var QuotesController = /** @class */ (function () {
-    function QuotesController() {
+var AuthorsController = /** @class */ (function () {
+    function AuthorsController() {
         var _this = this;
-        this.quoteRoutes = express.Router();
-        this.quoteRoutes.get("/", function (req, resp) { return __awaiter(_this, void 0, void 0, function () {
-            var q;
+        this.exp = express();
+        this.exp.use(function (req, resp, next) {
+            next();
+        });
+        this.authorsRoutes = express.Router();
+        this.authorsRoutes.get("/", function (req, resp) { return __awaiter(_this, void 0, void 0, function () {
+            var re;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.QuoteOfTheDay()];
+                    case 0: return [4 /*yield*/, this.GetTypeHead()];
                     case 1:
-                        q = _a.sent();
-                        resp.send(q);
+                        re = _a.sent();
+                        resp.send(re);
                         return [2 /*return*/];
                 }
             });
         }); });
     }
-    QuotesController.prototype.QuoteOfTheDay = function () {
+    AuthorsController.prototype.GetTypeHead = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var quote, qBody, resp;
+            var resp;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        qBody = "";
-                        return [4 /*yield*/, fetch("https://favqs.com/api/qotd").then(function (resp) { return resp.json(); })];
+                    case 0: return [4 /*yield*/, fetch("https://favqs.com/api/typeahead", {
+                            headers: {
+                                "Authorization": "Token token='b87a405f6efc955f5861946c602d82d9'"
+                            }
+                        })];
                     case 1:
                         resp = _a.sent();
-                        quote = resp;
                         console.log(resp);
-                        qBody = resp["quote"];
-                        console.log("returning" + qBody);
-                        return [2 /*return*/, { "quote": qBody }];
+                        return [2 /*return*/, resp];
                 }
             });
         });
     };
-    return QuotesController;
+    return AuthorsController;
 }());
-exports.QuotesController = QuotesController;
+exports.AuthorsController = AuthorsController;

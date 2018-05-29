@@ -16,10 +16,12 @@ export class BodyComponent implements OnInit {
   ngOnInit() {
     this.items=[
       {
-        label:'Authors'
+        label:'Authors',
+        routerLink:'authors'
       },
       {
-        label:'Tags'
+        label:'Tags',
+        routerLink:'tags'
       },
       {
         label:'Users'
@@ -38,7 +40,7 @@ export class BodyComponent implements OnInit {
     ]
 
 
-    this.server.home().then((data)=>{console.log(data); this.connectionStatus=data})
+   this.server.GetTypeHeads().then((heads)=>{console.log(heads)});
   
   }  
   
