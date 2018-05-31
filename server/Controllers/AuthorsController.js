@@ -57,22 +57,127 @@ var AuthorsController = /** @class */ (function () {
                 }
             });
         }); });
+        this.authorsRoutes.get("/:author", function (req, resp) { return __awaiter(_this, void 0, void 0, function () {
+            var re;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.log("quote by auth");
+                        return [4 /*yield*/, this.GetQuotesByAuthor(req.params.author)];
+                    case 1:
+                        re = _a.sent();
+                        console.log("sending");
+                        console.log(re);
+                        resp.send(re);
+                        return [2 /*return*/];
+                }
+            });
+        }); });
     }
     AuthorsController.prototype.GetTypeHead = function () {
         return __awaiter(this, void 0, void 0, function () {
             var resp;
             return __generator(this, function (_a) {
+                resp = {
+                    "authors": [
+                        {
+                            "name": "Henry David Thoreau",
+                            "permalink": "henry-david-thoreau",
+                            "count": 148
+                        },
+                        {
+                            "name": "Ralph Waldo Emerson",
+                            "permalink": "ralph-waldo-emerson",
+                            "count": 139
+                        },
+                        {
+                            "name": "Albert Einstein",
+                            "permalink": "albert-einstein",
+                            "count": 135
+                        },
+                        {
+                            "name": "Mark Twain",
+                            "permalink": "mark-twain",
+                            "count": 126
+                        },
+                        {
+                            "name": "Friedrich Nietzsche",
+                            "permalink": "friedrich-nietzsche",
+                            "count": 122
+                        },
+                        {
+                            "name": "Mahatma Gandhi",
+                            "permalink": "mahatma-gandhi",
+                            "count": 118
+                        },
+                        {
+                            "name": "George Bernard Shaw",
+                            "permalink": "george-bernard-shaw",
+                            "count": 117
+                        },
+                        {
+                            "name": "Oscar Wilde",
+                            "permalink": "oscar-wilde",
+                            "count": 112
+                        },
+                        {
+                            "name": "Benjamin Franklin",
+                            "permalink": "benjamin-franklin",
+                            "count": 112
+                        },
+                        {
+                            "name": "Mitt Romney",
+                            "permalink": "mitt-romney",
+                            "count": 109
+                        },
+                        {
+                            "name": "Thomas Jefferson",
+                            "permalink": "thomas-jefferson",
+                            "count": 102
+                        },
+                        {
+                            "name": "Francois de La Rochefoucauld",
+                            "permalink": "francois-de-la-rochefoucauld",
+                            "count": 100
+                        },
+                        {
+                            "name": "Aristotle",
+                            "permalink": "aristotle",
+                            "count": 100
+                        },
+                        {
+                            "name": "Plato",
+                            "permalink": "plato",
+                            "count": 98
+                        },
+                        {
+                            "name": "Barack Obama",
+                            "permalink": "barack-obama",
+                            "count": 94
+                        }
+                    ]
+                };
+                return [2 /*return*/, resp];
+            });
+        });
+    };
+    AuthorsController.prototype.GetQuotesByAuthor = function (author) {
+        return __awaiter(this, void 0, void 0, function () {
+            var url, resp;
+            return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch("https://favqs.com/api/typeahead", {
-                            method: "GET",
-                            credentials: 'include',
-                            headers: {
-                                "Authorization": "Token token=b87a405f6efc955f5861946c602d82d9"
-                            }
-                        }).then(function (resp) { return resp.json(); })];
+                    case 0:
+                        url = "https://favqs.com/api/quotes/?filter=" + author + "&type=author";
+                        console.log(url);
+                        return [4 /*yield*/, fetch("https://favqs.com/api/quotes/?filter=" + author + "&type=author", {
+                                method: "GET",
+                                credentials: 'include',
+                                headers: {
+                                    "Authorization": "Token token=b87a405f6efc955f5861946c602d82d9"
+                                }
+                            }).then(function (resp) { return resp.json(); })];
                     case 1:
                         resp = _a.sent();
-                        console.log(resp);
                         return [2 /*return*/, resp];
                 }
             });

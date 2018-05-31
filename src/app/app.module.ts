@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from '../routing';
 import { AuthorsComponent } from './authors/authors.component';
 import { TagsComponent } from './tags/tags.component';
+import { QuotebyauthComponent } from './quotebyauth/quotebyauth.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TagsComponent } from './tags/tags.component';
     FooterComponent,
     LandingComponent,
     AuthorsComponent,
-    TagsComponent
+    TagsComponent,
+    QuotebyauthComponent
   ],
   imports: [
     BrowserModule,

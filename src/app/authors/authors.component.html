@@ -1,8 +1,8 @@
 <div class="authCards">
-    <div class="authCard" *ngFor="let auth of authors">
+    <div class="authCard ui-widget" (click)="getQuotesByAuthor(auth.permalink)" *ngFor="let auth of authors">
         
-        <p-card title="{{auth.name}} ({{auth.count}})">
+        <span>{{auth.name}} ({{auth.count}})</span>
           
-      </p-card></div>
+     </div>
       
 </div>

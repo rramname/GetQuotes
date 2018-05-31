@@ -29,6 +29,15 @@ export class QuoteService
 
     }
 
+    GetQuotesByAuthor(autho){
+        let authQuotes:any;
+        console.log("calling server")
+         return this.http.get("http://localhost:3000/authors/"+autho).toPromise().then((resp)=>{
+             console.log(resp);
+            return resp;
+        })
+    }
+
 
     typesHeades:any;
 }
