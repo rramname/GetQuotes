@@ -23,10 +23,13 @@ export class AuthorsController{
 
     async GetTypeHead(){
         let resp = await  fetch("https://favqs.com/api/typeahead",{
+            method:"GET",
+            credentials: 'include',
             headers:{
-                "Authorization":"Token token='b87a405f6efc955f5861946c602d82d9'"
+                "Authorization":"Token token=b87a405f6efc955f5861946c602d82d9"
             }
-        });
+        }).then(resp=>resp.json());
+        
         console.log(resp)
         return resp;
     }

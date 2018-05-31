@@ -64,10 +64,12 @@ var AuthorsController = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, fetch("https://favqs.com/api/typeahead", {
+                            method: "GET",
+                            credentials: 'include',
                             headers: {
-                                "Authorization": "Token token='b87a405f6efc955f5861946c602d82d9'"
+                                "Authorization": "Token token=b87a405f6efc955f5861946c602d82d9"
                             }
-                        })];
+                        }).then(function (resp) { return resp.json(); })];
                     case 1:
                         resp = _a.sent();
                         console.log(resp);

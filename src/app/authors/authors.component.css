@@ -1,0 +1,16 @@
+.authCards{
+    
+    display: flex;
+    flex: initial;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+
+}
+.authCard{
+    text-align: center;
+    flex: 0 1 25%;
+}
+.ui-card-body:hover{
+    background-color: #2790b0
+}

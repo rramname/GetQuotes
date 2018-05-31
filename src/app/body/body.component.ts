@@ -40,7 +40,7 @@ export class BodyComponent implements OnInit {
     ]
 
 
-   this.server.GetTypeHeads().then((heads)=>{console.log(heads)});
+   this.server.GetTypeHeads();
   
   }  
   

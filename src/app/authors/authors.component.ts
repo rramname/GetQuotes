@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuoteService } from '../../Services/quote.service';
 
 @Component({
   selector: 'app-authors',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:QuoteService) { }
 
   ngOnInit() {
+      this.authors=this.service.typesHeades["authors"];
+      console.log(this.authors);
   }
+
+  authors:string[];
 
 }
