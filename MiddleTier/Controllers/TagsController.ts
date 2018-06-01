@@ -277,7 +277,7 @@ export class TagsController{
             method:"GET",
             credentials: 'include',
             headers:{
-                "Authorization":"Token token=b87a405f6efc955f5861946c602d82d9"
+                "Authorization":"Token token="
             }
         }).then(resp=>resp.json());
         return resp;
