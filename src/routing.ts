@@ -3,6 +3,7 @@ import { LandingComponent } from "./app/landing/landing.component";
 import { AuthorsComponent } from "./app/authors/authors.component";
 import { TagsComponent } from "./app/tags/tags.component";
 import { QuotebyauthComponent } from "./app/quotebyauth/quotebyauth.component";
+import { QuotebytagsComponent } from "./app/quotebytags/quotebytags.component";
 
 export const appRoutes:Routes=[
     {
@@ -21,5 +22,10 @@ export const appRoutes:Routes=[
     {
         path:"authors/:author",
         component:QuotebyauthComponent
+    }
+    ,
+    {
+        path:"tags/:tag",
+        component:QuotebytagsComponent
     }
 ]

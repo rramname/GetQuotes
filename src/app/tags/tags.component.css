@@ -1,0 +1,18 @@
+.authCards{
+    
+    display: flex;
+    flex: initial;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+
+}
+.authCard{
+    
+    flex: 0 1 20%;
+    padding: 10px;
+    cursor: pointer;
+}
+.authCard:hover{
+    background-color: #2790b0
+}

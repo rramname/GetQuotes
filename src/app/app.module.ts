@@ -19,6 +19,7 @@ import { appRoutes } from '../routing';
 import { AuthorsComponent } from './authors/authors.component';
 import { TagsComponent } from './tags/tags.component';
 import { QuotebyauthComponent } from './quotebyauth/quotebyauth.component';
+import { QuotebytagsComponent } from './quotebytags/quotebytags.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { QuotebyauthComponent } from './quotebyauth/quotebyauth.component';
     LandingComponent,
     AuthorsComponent,
     TagsComponent,
-    QuotebyauthComponent
+    QuotebyauthComponent,
+    QuotebytagsComponent
   ],
   imports: [
     BrowserModule,

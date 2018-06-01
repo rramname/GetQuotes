@@ -1,3 +1,8 @@
-<p>
-  tags works!
-</p>
+<div class="authCards">
+  <div class="authCard ui-widget" (click)="getQuotesByTag(tag.permalink)" *ngFor="let tag of tags">
+      
+      <span>{{tag.name}} ({{tag.count}})</span>
+        
+   </div>
+    
+</div>

@@ -38,6 +38,20 @@ export class QuoteService
         })
     }
 
+    GetTags(){
+        return this.http.get("http://localhost:3000/tags").toPromise().then((resp)=>{
+           return resp;
+            
+        });
+    }
+
+    GetQuotesByTag(tag){
+        console.log("servoce:"+tag)
+        return this.http.get("http://localhost:3000/tags/"+tag).toPromise().then((resp)=>{
+           return resp;
+       })
+    }
+
 
     typesHeades:any;
 }
